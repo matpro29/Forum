@@ -1,0 +1,38 @@
+{% extends '@Web/layout.html.twig' %}
+
+{% block title %}Image {{ idImage }}{% endblock %}
+
+{% block web_content %}
+    <div class="album text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="card card-image">
+                    <img src="http:\\localhost\PhpProject1\web\images\images-large\image{{ idImage }}.jpg" alt="Card image cap">
+                </div>
+            </div>
+            {% for comment in comments %}
+                <div class="row">
+                    <div class="card card-image">
+                        <p class="card-text">{{ comment.user }} on {{ comment.date|date('d-m-Y, H:i:s') }}</p>
+                        <p class="card-text">{{ comment.comment }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="card card-image">
+                    <form method="post" class="form-signin card-image">
+                        {{ form_row(form._token) }}
+                        {{ form_errors(form) }}
+                        <div class="sr-only">{{ form_label(form.comment) }}</div>
+                        {{ form_widget(form.comment, { 'attr': {'class': 'form-control', 'placeholder': 'Comment'} }) }}
+                        <input type="submit"
+                               class="btn btn-lg btn-primary btn-block top-margin10px"
+                               id="save"
+                               name="save"
+                               value="Comment" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

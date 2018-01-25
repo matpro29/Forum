@@ -1,0 +1,51 @@
+{% extends '@Web/layout.html.twig' %}
+
+{% block title %}Your posts{% endblock %}
+
+{% block web_content %}
+    <div class="album text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="card card-image3">
+                    <form method="post" class="form-signin card-image">
+                        {{ form_row(form1._token) }}
+                        {{ form_errors(form1) }}
+                        <div class="sr-only">{{ form_label(form1.id) }}</div>
+                        {{ form_widget(form1.id, { 'attr': {'class': 'form-control', 'placeholder': 'Id'} }) }}
+                        <input type="submit"
+                               class="btn btn-lg btn-primary btn-block top-margin10px"
+                               id="submite"
+                               name="submit"
+                               value="Delete" />
+                    </form>
+                </div>
+                <div class="card card-image3">
+                    <form method="post" class="form-signin card-image">
+                        {{ form_row(form2._token) }}
+                        {{ form_errors(form2) }}
+                        <div class="sr-only">{{ form_label(form2.id) }}</div>
+                        {{ form_widget(form2.id, { 'attr': {'class': 'form-control', 'placeholder': 'Id'} }) }}
+                        <div class="sr-only">{{ form_label(form2.comment) }}</div>
+                        {{ form_widget(form2.comment, { 'attr': {'class': 'form-control', 'placeholder': 'Comment'} }) }}
+                        <input type="submit"
+                               class="btn btn-lg btn-primary btn-block top-margin10px"
+                               id="submit1"
+                               name="submit1"
+                               value="Update" />
+                    </form>
+                </div>
+            </div>
+            {% for comment in comments %}
+                <div class="row">
+                    <div class="card card-image1">
+                        <p class="card-text">{{ comment.id }}.</p>
+                    </div>
+                    <div class="card card-image2">
+                        <p class="card-text">{{ comment.user }} on {{ comment.date|date('d-m-Y, H:i:s') }}</p>
+                        <p class="card-text">{{ comment.comment }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

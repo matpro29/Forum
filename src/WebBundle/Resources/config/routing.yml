@@ -1,0 +1,19 @@
+web_homepage:
+    path:     /
+    defaults: { _controller: WebBundle:Default:index }
+
+web_image:
+    path:     /image/{idImage}
+    defaults: { _controller: WebBundle:Image:image }
+
+web_contact:
+    path:     /contact
+    defaults: { _controller: WebBundle:Contact:contact }
+
+web_posts:
+    path:     /profile/posts
+    defaults: { _controller: WebBundle:Posts:posts }
+
+web_allposts:
+    path:     /posts
+    defaults: { _controller: WebBundle:AllPosts:allposts }

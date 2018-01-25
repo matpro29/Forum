@@ -1,0 +1,36 @@
+{% extends '@Web/layout.html.twig' %}
+
+{% block title %}All posts{% endblock %}
+
+{% block web_content %}
+    <div class="album text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="card card-image">
+                    <form method="post" class="form-signin card-image">
+                        {{ form_row(form1._token) }}
+                        {{ form_errors(form1) }}
+                        <div class="sr-only">{{ form_label(form1.id) }}</div>
+                        {{ form_widget(form1.id, { 'attr': {'class': 'form-control', 'placeholder': 'Id'} }) }}
+                        <input type="submit"
+                               class="btn btn-lg btn-primary btn-block top-margin10px"
+                               id="delete"
+                               name="delete"
+                               value="Delete" />
+                    </form>
+                </div>
+            </div>
+            {% for comment in comments %}
+                <div class="row">
+                    <div class="card card-image1">
+                        <p class="card-text">{{ comment.id }}.</p>
+                    </div>
+                    <div class="card card-image2">
+                        <p class="card-text">{{ comment.user }} on {{ comment.date|date('d-m-Y, H:i:s') }}</p>
+                        <p class="card-text">{{ comment.comment }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
