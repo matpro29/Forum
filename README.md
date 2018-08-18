@@ -1,4 +1,4 @@
-Forum
+forum
 ========================
 
 Jest to mój pierwszy projekt PHP/Symfony, do jego poprawnego działania wymagany jest xampp.
@@ -10,7 +10,7 @@ Należy wykonać następujące polecenia:
 
   * cd xampp\htdocs
 
-  * git clone git@github.com:matpro29/Forum.git PhpProject1
+  * git clone git@github.com:matpro29/forum.git PhpProject1
 
   * cd PhpProject1
 
