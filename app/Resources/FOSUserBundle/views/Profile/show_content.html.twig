@@ -6,7 +6,7 @@
                 <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
             </div>
             <div class="card">
-                <form action="/PhpProject1/web/profile/posts" class="form-signin card-image">
+                <form action="/symfony-forum/web/profile/posts" class="form-signin card-image">
                     <input type="submit"
                            class="btn btn-lg btn-primary btn-block top-margin10px"
                            value="Your posts" />
@@ -14,7 +14,7 @@
             </div>
             {% if is_granted('ROLE_SUPER_ADMIN') %}
                 <div class="card">
-                    <form action="/PhpProject1/web/posts" class="form-signin card-image">
+                    <form action="/symfony-forum/web/posts" class="form-signin card-image">
                         <input type="submit"
                                class="btn btn-lg btn-primary btn-block top-margin10px"
                                value="All posts" />

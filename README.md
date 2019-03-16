@@ -1,7 +1,9 @@
-forum
+symfony-forum
 ========================
 
-Jest to mój pierwszy projekt PHP/Symfony, do jego poprawnego działania wymagany jest xampp.
+Jest to mój pierwszy projekt PHP z wykorzystanie Symfony, do jego poprawnego działania wymagany jest xampp z PHP 5.6.
+
+Xampp: https://sourceforge.net/projects/xampp/
 
 Jak uruchomić?
 --------------
@@ -10,13 +12,11 @@ Należy wykonać następujące polecenia:
 
   * cd xampp/htdocs
 
-  * git clone git@github.com:matpro29/forum.git PhpProject1
+  * git clone git@github.com:matpro29/symfony-forum.git
 
-  * cd PhpProject1
+  * cd symfony-forum
 
   * composer install
-  
-  * W app/config/parameters.yml podaj dane twojej bazy danych
 
   * php app/console doctrine:database:create
 
@@ -24,4 +24,4 @@ Należy wykonać następujące polecenia:
   
   * composer require friendsofsymfony/user-bundle "~1.3"
   
-  Teraz możesz przejść do: http://localhost/PhpProject1/web
+  Teraz możesz przejść do: http://localhost/symfony-forum/web
